@@ -6,4 +6,11 @@ function loadStories() {
 	req.keys().forEach((filename) => req(filename));
 }
 
+// Option defaults:
+addParameters({
+	options: {
+		name: 'awan ui',
+	},
+});
+
 configure(loadStories, module);
