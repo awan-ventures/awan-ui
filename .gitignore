@@ -5,4 +5,5 @@ temp
 .eslintcache
 dist
 .docz
+.out
 *.psd
