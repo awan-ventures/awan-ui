@@ -1,8 +1,7 @@
 {
-  "name": "rinse-react",
+  "name": "awan-ui",
   "version": "4.0.0",
-  "description": "Rinse, React, repeat. A React component library boilerplate.",
-  "main": "dist/rinse.js",
+  "description": "awan ui",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
@@ -13,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cwlsn/rinse-react.git"
+    "url": "git+https://github.com/awan-ventures/awan-ui.git"
   },
   "keywords": [
     "boilerplate",
@@ -25,15 +24,15 @@
   "author": "Connor Wilson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cwlsn/rinse-react/issues"
+    "url": "https://github.com/awan-ventures/awan-ui/issues"
   },
-  "homepage": "https://github.com/cwlsn/rinse-react#readme",
+  "homepage": "https://github.com/awan-ventures/awan-ui",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
     "@babel/preset-react": "^7.0.0",
     "@storybook/addon-actions": "^4.0.0-alpha.20",
-    "@storybook/react": "^4.0.0-alpha.20",
+    "@storybook/react": "^5.1.10",
     "@tulipjs/eslint-config": "^1.1.1",
     "babel-loader": "^8.0.1",
     "css-loader": "^1.0.0",
