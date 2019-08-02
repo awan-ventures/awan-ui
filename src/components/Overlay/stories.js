@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { Overlay } from './Overlay';
 
-storiesOf('Overlay').add('floating component', () => (
+storiesOf('Overlay').add('Overlay w/ Children', () => (
 	<Overlay onOverlayClick={action('clicked overlay')}>
 		<div
 			style={{
@@ -17,7 +17,11 @@ storiesOf('Overlay').add('floating component', () => (
 		</div>
 	</Overlay>
 ));
-storiesOf('Overlay').add('overlay color', () => (
+storiesOf('Overlay').add('Overlay w/o Children', () => (
+	<Overlay onOverlayClick={action('clicked overlay')} overlayColor="#f0f" />
+));
+
+storiesOf('Overlay').add('Overlay Custom Color', () => (
 	<Overlay onOverlayClick={action('clicked overlay')} overlayColor="#f0f">
 		<div
 			style={{
@@ -29,7 +33,4 @@ storiesOf('Overlay').add('overlay color', () => (
 			Text 123
 		</div>
 	</Overlay>
-));
-storiesOf('Overlay').add('alone', () => (
-	<Overlay onOverlayClick={action('clicked overlay')} overlayColor="#f0f" />
 ));
