@@ -1,14 +1,15 @@
 {
-  "name": "awan-ui",
-  "version": "4.0.0",
-  "description": "awan ui",
+  "name": "@awan-ui/core",
+  "version": "0.0.1",
+  "description": "UI elements by awan.ventures team",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
     "build-storybook": "build-storybook  -s public -c .storybook -o .out",
     "storybook": "start-storybook -p 9001",
     "docz:dev": "docz dev",
-    "docz:build": "docz build"
+    "docz:build": "docz build",
+    "publish": "npm publish --access public"
   },
   "repository": {
     "type": "git",
