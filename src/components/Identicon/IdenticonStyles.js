@@ -11,6 +11,7 @@ export const IdenticonContainer = styled.div`
 	background: ${(props) =>
 		props.background ? `${props.background}` : '#daeeff'};
 	position: relative;
+	overflow: hidden;
 `;
 
 export const Rect = styled.rect`
@@ -20,4 +21,7 @@ export const Svg = styled.svg`
 	position: relative;
 	width: 100%;
 	height: 100%;
+	left: ${(props) => (props.offsetY ? `${props.offsetY}%` : 0)};
+	top: ${(props) => (props.offsetX ? `${props.offsetX}%` : 0)};
+	overflow: visible;
 `;

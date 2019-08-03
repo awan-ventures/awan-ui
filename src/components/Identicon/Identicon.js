@@ -12,6 +12,8 @@ export const Identicon = ({
 	radius,
 	scale = 50,
 	seed = 2,
+	offsetY = 0,
+	offsetX = 0,
 }) => {
 	const cleanedValue = value.replace(/[^a-zA-Z0-9]/g, '');
 	const values = new TextEncoder().encode(cleanedValue);
@@ -53,10 +55,13 @@ export const Identicon = ({
 				);
 			})}
 
-			<Svg>
+			<Svg offsetY={offsetY} offsetX={offsetX}>
 				{[...Array(RECT_NUM)].map((rect, i) => {
-					const x = VALUES_PERCENTAGE[VALUES.length - i] - 2 * (i + 1);
-					const y = VALUES_PERCENTAGE[i] + (i + 1) * 2;
+					let x = VALUES_PERCENTAGE[VALUES.length - i - 1] - 2 * (i + 1);
+					let y = VALUES_PERCENTAGE[i] + (i + 1) * 2;
+
+					x = x === NaN ? x + i + 1 : x;
+					y = y === NaN ? y + i + 1 : y;
 
 					const RANDOM_NUMBER = VALUES[i];
 

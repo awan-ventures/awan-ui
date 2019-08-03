@@ -8,11 +8,12 @@ import uuidv4 from 'uuid/v4';
 
 storiesOf('Identicon').add('Identicon', () => {
 	const [value, setValue] = React.useState(uuidv4);
-	const [radius, setRadius] = React.useState(50);
-	const [height, setHeight] = React.useState(50);
-	const [width, setWidth] = React.useState(50);
+	const [radius, setRadius] = React.useState(200);
+	const [height, setHeight] = React.useState(200);
+	const [width, setWidth] = React.useState(200);
 	const [scale, setScale] = React.useState(50);
-	const [seed, setSeed] = React.useState(1);
+	const [offsetY, setOffsetY] = React.useState(50);
+	const [offsetX, setOffsetX] = React.useState(50);
 
 	return (
 		<div>
@@ -22,6 +23,8 @@ storiesOf('Identicon').add('Identicon', () => {
 				height={height}
 				radius={radius}
 				scale={scale}
+				offsetY={offsetY}
+				offsetX={offsetX}
 			/>
 			<button
 				onClick={() => {
@@ -47,7 +50,9 @@ storiesOf('Identicon').add('Identicon', () => {
 					onChange={(e) => {
 						setRadius(e.target.value);
 					}}
-					type="number"
+					type="range"
+					min="0"
+					max="500"
 				/>
 			</div>
 			<div>
@@ -77,7 +82,33 @@ storiesOf('Identicon').add('Identicon', () => {
 					onChange={(e) => {
 						setScale(e.target.value);
 					}}
-					type="number"
+					type="range"
+					min="-100"
+					max="100"
+				/>
+			</div>
+			<div>
+				<label>Offset Y</label>
+				<input
+					value={offsetY}
+					onChange={(e) => {
+						setOffsetY(e.target.value);
+					}}
+					type="range"
+					min="-100"
+					max="100"
+				/>
+			</div>
+			<div>
+				<label>Offset X</label>
+				<input
+					value={offsetX}
+					onChange={(e) => {
+						setOffsetX(e.target.value);
+					}}
+					type="range"
+					min="-100"
+					max="100"
 				/>
 			</div>
 		</div>
