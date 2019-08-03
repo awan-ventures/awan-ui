@@ -6,15 +6,15 @@ import { Identicon } from './Identicon';
 
 import uuidv4 from 'uuid/v4';
 
-const Example = () => {
+storiesOf('Identicon').add('Identicon', () => {
 	const [value, setValue] = React.useState(uuidv4);
-	const [rx, setRx] = React.useState(0);
+	const [radius, setRadius] = React.useState(0);
 	const [height, setHeight] = React.useState(50);
 	const [width, setWidth] = React.useState(50);
 
 	return (
 		<div>
-			<Identicon value={value} width={width} height={height} radius={rx} />
+			<Identicon value={value} width={width} height={height} radius={radius} />
 			<button
 				onClick={() => {
 					const hex = uuidv4;
@@ -35,9 +35,9 @@ const Example = () => {
 			<div>
 				<label>Radius</label>
 				<input
-					value={rx}
+					value={radius}
 					onChange={(e) => {
-						setRx(e.target.value);
+						setRadius(e.target.value);
 					}}
 					type="number"
 				/>
@@ -64,8 +64,4 @@ const Example = () => {
 			</div>
 		</div>
 	);
-};
-
-storiesOf('Identicon').add('Identicon', () => {
-	return <Example />;
 });
