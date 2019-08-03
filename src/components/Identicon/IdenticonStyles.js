@@ -8,7 +8,8 @@ export const IdenticonContainer = styled.div`
 	flex-direction: column;
 	height: ${(props) => (props.height ? `${props.height}px` : '100%')};
 	width: ${(props) => (props.width ? `${props.width}px` : '100%')};
-	background: #daeeff;
+	background: ${(props) =>
+		props.background ? `${props.background}` : '#daeeff'};
 	position: relative;
 `;
 

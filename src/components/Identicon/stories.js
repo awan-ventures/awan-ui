@@ -8,13 +8,21 @@ import uuidv4 from 'uuid/v4';
 
 storiesOf('Identicon').add('Identicon', () => {
 	const [value, setValue] = React.useState(uuidv4);
-	const [radius, setRadius] = React.useState(0);
+	const [radius, setRadius] = React.useState(50);
 	const [height, setHeight] = React.useState(50);
 	const [width, setWidth] = React.useState(50);
+	const [scale, setScale] = React.useState(50);
+	const [seed, setSeed] = React.useState(1);
 
 	return (
 		<div>
-			<Identicon value={value} width={width} height={height} radius={radius} />
+			<Identicon
+				value={value}
+				width={width}
+				height={height}
+				radius={radius}
+				scale={scale}
+			/>
 			<button
 				onClick={() => {
 					const hex = uuidv4;
@@ -58,6 +66,16 @@ storiesOf('Identicon').add('Identicon', () => {
 					value={width}
 					onChange={(e) => {
 						setWidth(e.target.value);
+					}}
+					type="number"
+				/>
+			</div>
+			<div>
+				<label>Scale</label>
+				<input
+					value={scale}
+					onChange={(e) => {
+						setScale(e.target.value);
 					}}
 					type="number"
 				/>
